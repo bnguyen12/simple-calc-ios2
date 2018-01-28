@@ -23,23 +23,34 @@ class ViewController: UIViewController {
   var inBar: [String] = []
   @IBOutlet weak var changeText: UITextField!
   
-  //Adds the label of the UIButton to the text bar if it's a number and records both numbers and operators for later calculations
+  //Adds the label of the UIButton to the text bar if it's a number and records
+  //both numbers and operators for later calculations
   @IBAction func addToBar(_ sender: UIButton) {
-    if Int(sender.titleLabel!.text!) != nil {
-      changeText.text = sender.titleLabel!.text!
+    if Float(sender.titleLabel!.text!) != nil { //if it's a valid number
+      if !inBar.isEmpty && (inBar.last!.contains(".") || Float(inBar.last!) != nil) {
+        inBar.append(inBar.removeLast() + sender.titleLabel!.text!)
+      } else {
+        inBar.append(sender.titleLabel!.text!)
+      }
+      changeText.text = inBar.last
+    } else if sender.titleLabel!.text! == "." {
+      inBar.append(inBar.removeLast() + ".")
+      changeText.text = inBar.last
+    } else { //for operators
+      inBar.append(sender.titleLabel!.text!)
     }
-    inBar.append(sender.titleLabel!.text!)
   }
   
-  //Calculates the operation when the equals button is pressed using the inBar array of strings
+  //Calculates the operation when the equals button is pressed using the inBar
+  //array of strings
   @IBAction func calculate(_ sender: UIButton) {
     if !inBar.isEmpty {
       var text: String = ""
-      var firstNum: Int = Int(inBar[0])!
+      var firstNum: Float = Float(inBar[0])!
       let op: String = inBar[1]
-      var secondNum: Int = 0
+      var secondNum: Float = 0
       if inBar.count >= 3 {
-        secondNum = Int(inBar[2])!
+        secondNum = Float(inBar[2])!
       }
       switch op {
       case "fact":
@@ -47,25 +58,25 @@ class ViewController: UIViewController {
           text = "0"
         } else {
           var sum: Int = 1
-          for num in 1...firstNum {
+          for num in 1...Int(firstNum) {
             sum *= num
           }
           text = "\(sum)"
         }
       case "count":
-        var sum: Int = 0
+        var sum: Float = 0
         for index in 0...inBar.count - 1 {
-          if Int(inBar[index]) != nil {
+          if Float(inBar[index]) != nil {
             sum += 1
           }
         }
         text = "\(sum)"
       case "avg":
-        var sum: Int = 0
-        var totalNums: Int = 0
+        var sum: Float = 0
+        var totalNums: Float = 0
         for index in 0...inBar.count - 1 {
-          if Int(inBar[index]) != nil {
-            sum += Int(inBar[index])!
+          if Float(inBar[index]) != nil {
+            sum += Float(inBar[index])!
             totalNums += 1
           }
         }
@@ -89,6 +100,12 @@ class ViewController: UIViewController {
       changeText.text = text
       inBar.removeAll()
     }
+  }
+  
+  //Clears all the numbers in the bar and clears all current operations going on
+  @IBAction func clearAll(_ sender: UIButton) {
+    changeText.text = ""
+    inBar.removeAll()
   }
 }
 
