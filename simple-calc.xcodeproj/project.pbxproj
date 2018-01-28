@@ -35,18 +35,18 @@
 
 /* Begin PBXFileReference section */
 		34694BD5201BD6D1001C7777 /* simple-calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34694BD8201BD6D1001C7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34694BDA201BD6D2001C7777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34694BD8201BD6D1001C7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "simple-calc/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		34694BDA201BD6D2001C7777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "simple-calc/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		34694BDD201BD6D2001C7777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		34694BDF201BD6D2001C7777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34694BDF201BD6D2001C7777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "simple-calc/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		34694BE2201BD6D2001C7777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		34694BE4201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34694BE4201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "simple-calc/Info.plist"; sourceTree = SOURCE_ROOT; };
 		34694BE9201BD6D2001C7777 /* simple-calcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-calcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34694BED201BD6D2001C7777 /* simple_calcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_calcTests.swift; sourceTree = "<group>"; };
 		34694BEF201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34694BF4201BD6D2001C7777 /* simple-calcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-calcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34694BF8201BD6D2001C7777 /* simple_calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_calcUITests.swift; sourceTree = "<group>"; };
-		34694BFA201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34694BF8201BD6D2001C7777 /* simple_calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = simple_calcUITests.swift; path = "simple-calcUITests/simple_calcUITests.swift"; sourceTree = SOURCE_ROOT; };
+		34694BFA201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "simple-calcUITests/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 				34694BF4201BD6D2001C7777 /* simple-calcUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		34694BD7201BD6D1001C7777 /* simple-calc */ = {
 			isa = PBXGroup;
@@ -105,7 +105,7 @@
 				34694BE4201BD6D2001C7777 /* Info.plist */,
 			);
 			path = "simple-calc";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		34694BEC201BD6D2001C7777 /* simple-calcTests */ = {
 			isa = PBXGroup;
@@ -114,7 +114,7 @@
 				34694BEF201BD6D2001C7777 /* Info.plist */,
 			);
 			path = "simple-calcTests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		34694BF7201BD6D2001C7777 /* simple-calcUITests */ = {
 			isa = PBXGroup;
@@ -123,7 +123,7 @@
 				34694BFA201BD6D2001C7777 /* Info.plist */,
 			);
 			path = "simple-calcUITests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -302,7 +302,8 @@
 				34694BDD201BD6D2001C7777 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = "simple-calc";
+			sourceTree = SOURCE_ROOT;
 		};
 		34694BE1201BD6D2001C7777 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -310,7 +311,8 @@
 				34694BE2201BD6D2001C7777 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
+			path = "simple-calc";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
