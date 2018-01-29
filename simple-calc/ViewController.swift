@@ -58,7 +58,7 @@ class ViewController: UIViewController {
       var secondNum: Float = 0
       var op: String = inBar[1]
       if RPNstatus {
-        leaveOnlyNumsAndOps()
+        stripArray("enter")
         op = inBar[inBar.count - 1]
         secondNum = Float(inBar[1])!
       } else if inBar.count > 2 { //if we're doing an op that isn't a factorial
@@ -76,23 +76,19 @@ class ViewController: UIViewController {
           text = "\(sum)"
         }
       case "count":
+        stripArray("count")
         var sum: Float = 0
-        for index in 0...inBar.count - 1 {
-          if Float(inBar[index]) != nil {
-            sum += 1
-          }
+        for _ in 0...inBar.count - 1 {
+          sum += 1
         }
         text = "\(sum)"
       case "avg":
+        stripArray("avg")
         var sum: Float = 0
-        var totalNums: Float = 0
         for index in 0...inBar.count - 1 {
-          if Float(inBar[index]) != nil {
-            sum += Float(inBar[index])!
-            totalNums += 1
-          }
+          sum += Float(inBar[index])!
         }
-        text = "\(sum / totalNums)"
+        text = "\(sum / Float(inBar.count))"
       case "+":
         text = "\(firstNum + secondNum)"
       case "-":
@@ -120,10 +116,10 @@ class ViewController: UIViewController {
     inBar.removeAll()
   }
   
-  //Strips an array of anything that isn't an operation or number
-  func leaveOnlyNumsAndOps() {
+  //Strips an array of anything that matches the given String
+  func stripArray(_ word: String) {
     for element in inBar.reversed() {
-      if element == "enter" {
+      if element == word {
         inBar.remove(at: inBar.index(of: element)!)
       }
     }
