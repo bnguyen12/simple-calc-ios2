@@ -60,14 +60,16 @@ class ViewController: UIViewController {
       if RPNstatus {
         stripArray("enter")
         op = inBar[inBar.count - 1]
-        secondNum = Float(inBar[1])!
+        if inBar.count != 2 { //if we're not doing a factorial
+          secondNum = Float(inBar[1])!
+        }
       } else if inBar.count > 2 { //if we're doing an op that isn't a factorial
         secondNum = Float(inBar[2])!
       }
       switch op {
       case "fact":
         if firstNum == 0 {
-          text = "0"
+          text = "1"
         } else {
           var sum: Int = 1
           for num in 1...Int(firstNum) {
