@@ -22,6 +22,14 @@ class ViewController: UIViewController {
   
   var inBar: [String] = []
   @IBOutlet weak var changeText: UITextField!
+  @IBOutlet weak var enterButton: UIButton!
+  var RPNstatus: Bool = false
+  
+  //Toggles whether reverse polish notation is on or not
+  @IBAction func RPNtoggle(_ sender: UIButton) {
+    RPNstatus = !RPNstatus
+    enterButton.isHidden = !enterButton.isHidden
+  }
   
   //Adds the label of the UIButton to the text bar if it's a number and records
   //both numbers and operators for later calculations
@@ -47,9 +55,13 @@ class ViewController: UIViewController {
     if !inBar.isEmpty {
       var text: String = ""
       var firstNum: Float = Float(inBar[0])!
-      let op: String = inBar[1]
       var secondNum: Float = 0
-      if inBar.count >= 3 {
+      var op: String = inBar[1]
+      if RPNstatus {
+        leaveOnlyNumsAndOps()
+        op = inBar[inBar.count - 1]
+        secondNum = Float(inBar[1])!
+      } else if inBar.count > 2 { //if we're doing an op that isn't a factorial
         secondNum = Float(inBar[2])!
       }
       switch op {
@@ -106,6 +118,15 @@ class ViewController: UIViewController {
   @IBAction func clearAll(_ sender: UIButton) {
     changeText.text = ""
     inBar.removeAll()
+  }
+  
+  //Strips an array of anything that isn't an operation or number
+  func leaveOnlyNumsAndOps() {
+    for element in inBar.reversed() {
+      if element == "enter" {
+        inBar.remove(at: inBar.index(of: element)!)
+      }
+    }
   }
 }
 
