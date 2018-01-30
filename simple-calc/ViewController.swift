@@ -100,10 +100,14 @@ class ViewController: UIViewController {
       case "/":
         text = "\(firstNum / secondNum)"
       case "%":
-        while firstNum > secondNum {
-          firstNum = firstNum - secondNum
-        }
+        if secondNum == 0 {
+          text = "\(secondNum)"
+        } else {
+          while firstNum >= secondNum {
+            firstNum = firstNum - secondNum
+          }
         text = "\(firstNum)"
+        }
       default:
         text = "error!"
       }
