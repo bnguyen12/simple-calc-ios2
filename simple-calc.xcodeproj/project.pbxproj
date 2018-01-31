@@ -14,6 +14,7 @@
 		34694BE3201BD6D2001C7777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34694BE1201BD6D2001C7777 /* LaunchScreen.storyboard */; };
 		34694BEE201BD6D2001C7777 /* simple_calcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694BED201BD6D2001C7777 /* simple_calcTests.swift */; };
 		34694BF9201BD6D2001C7777 /* simple_calcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694BF8201BD6D2001C7777 /* simple_calcUITests.swift */; };
+		349C9ABE2021586300696DCB /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C9ABD2021586300696DCB /* historyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		34694BF4201BD6D2001C7777 /* simple-calcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-calcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34694BF8201BD6D2001C7777 /* simple_calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = simple_calcUITests.swift; path = "simple-calcUITests/simple_calcUITests.swift"; sourceTree = SOURCE_ROOT; };
 		34694BFA201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "simple-calcUITests/Info.plist"; sourceTree = SOURCE_ROOT; };
+		349C9ABD2021586300696DCB /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				34694BD8201BD6D1001C7777 /* AppDelegate.swift */,
+				349C9ABD2021586300696DCB /* historyViewController.swift */,
 				34694BDA201BD6D2001C7777 /* ViewController.swift */,
 				34694BDC201BD6D2001C7777 /* Main.storyboard */,
 				34694BDF201BD6D2001C7777 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 			files = (
 				34694BDB201BD6D2001C7777 /* ViewController.swift in Sources */,
 				34694BD9201BD6D1001C7777 /* AppDelegate.swift in Sources */,
+				349C9ABE2021586300696DCB /* historyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

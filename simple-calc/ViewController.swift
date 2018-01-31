@@ -21,6 +21,7 @@ class ViewController: UIViewController {
   }
   
   var inBar: [String] = []
+  var wordBank: [String] = []
   @IBOutlet weak var changeText: UITextField!
   @IBOutlet weak var enterButton: UIButton!
   var RPNstatus: Bool = false
@@ -53,6 +54,7 @@ class ViewController: UIViewController {
   //array of strings
   @IBAction func calculate(_ sender: UIButton) {
     if !inBar.isEmpty {
+      var finalString: String = inBar.joined(separator: " ")
       var text: String = ""
       var firstNum: Float = Float(inBar[0])!
       var secondNum: Float = 0
@@ -111,6 +113,8 @@ class ViewController: UIViewController {
       default:
         text = "error!"
       }
+      finalString += " = " + text
+      wordBank.append(finalString)
       changeText.text = text
       inBar.removeAll()
     }
@@ -129,6 +133,11 @@ class ViewController: UIViewController {
         inBar.remove(at: inBar.index(of: element)!)
       }
     }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let historyView = segue.destination as! historyViewController
+    historyView.wordBank = wordBank
   }
 }
 
