@@ -48,7 +48,7 @@
 		34694BF4201BD6D2001C7777 /* simple-calcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple-calcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34694BF8201BD6D2001C7777 /* simple_calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = simple_calcUITests.swift; path = "simple-calcUITests/simple_calcUITests.swift"; sourceTree = SOURCE_ROOT; };
 		34694BFA201BD6D2001C7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "simple-calcUITests/Info.plist"; sourceTree = SOURCE_ROOT; };
-		349C9ABD2021586300696DCB /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
+		349C9ABD2021586300696DCB /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = historyViewController.swift; path = "simple-calc/historyViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
